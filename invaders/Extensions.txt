@@ -1,0 +1,24 @@
+Multiple Waves: In app.py, the elif statement in line 224 creates the next wave with a faster speed for the aliens
+using the same amount of lives and points for the player(tempLives and tempPoints)
+
+Sound Effects: Created _soundlib with a function _createSoundLibrary() to implement all the sounds in the Sounds 
+file. every time a ship or alien dies(_shipCollides and _alienCollides), a sound is made (blast for ship and pop 
+for alien) and everytime player hits a fire key(_checkFireKey), a sound is made (pew). Also made a function to 
+toggle the sounds (press m to mute)
+
+Dynamic Speed: Every time an alien dies, the speed is increased by a factor of 0.97. Every wave, the speed is 
+increased by a factor by 0.9.Created _speed and getters and setters for it in models.py. The setter doesn't exactly
+assign a number to _points, but it increases it by a factor of a number between 0 and 1.
+
+Keep Track of Score:Created attribute _points in wave as well as getters/setters for them. Also created _score 
+in app.py to keep track of score and print it onto the screen. Aliens dying gives players points (10*row alien is
+in) 
+
+Animation: Changed the parent class for both Alien and Ship from GImage to GStrip in order for them to access the
+filmstrips. When I create the aliens and the ship, they all have the source of an alien-strip/ship-strip
+Whenever they move, I would change the frame of each alien, so they appeared to be animated. The ship's only 
+animation is when player dies. So, I created another attribute _shipGone to keep track of when ship dies and when
+to increase frame of ship. I did the same for aliens (_alienGone) but this keeps track of the row and col of an 
+alient that died.
+
+Also, there can only be 1 bolt from each side at a time.
