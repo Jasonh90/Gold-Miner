@@ -1,1 +1,3 @@
-# Gold-Miner
+# Gold Miners
+
+> Java
